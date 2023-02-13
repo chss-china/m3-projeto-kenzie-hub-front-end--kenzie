@@ -5,40 +5,41 @@ import { HeaderDashboard } from "../headers";
 import {
   DivContainerDashboard,
   DivBodyDashboard,
-  PModulo,
-  SectionEstamosDesenv,
+  PModule,
+  SectionDeveloping,
 } from "./style";
-export function DashboardPage({ setUser, user }) {
+export function DashboardPage({ SetUser, User }) {
   const TokenUser = localStorage.getItem("@tokenUser");
-  const responseApiFunction = async () => {
+  const ResponseApiFunction = async () => {
     try {
       const { data } = await Api.get("/profile", {
         headers: {
           Authorization: `Bearer ${TokenUser}`,
         },
       });
-      setUser(data);
+      SetUser(data);
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    responseApiFunction();
+    ResponseApiFunction();
   }, []);
   return (
     <DivBodyDashboard>
-      <HeaderDashboard user={user} setUser={setUser} />
+      <HeaderDashboard User={User} SetUser={SetUser} />
       <DivContainerDashboard>
         <section>
-          <h1>Ola,{user.name}</h1>
-          <PModulo>Modulo: {user.course_module}</PModulo>
+          <h1>Ola,{User.name}</h1>
+          <PModule>Modulo: {User.course_module}</PModule>
         </section>
-        <SectionEstamosDesenv>
+
+        <SectionDeveloping>
           <h2>Que pena!Estamos em desenvolvimento</h2>
           <p>
             Nossa aplicação está em desenvolvimento, em breve teremos novidades
           </p>
-        </SectionEstamosDesenv>
+        </SectionDeveloping>
       </DivContainerDashboard>
     </DivBodyDashboard>
   );

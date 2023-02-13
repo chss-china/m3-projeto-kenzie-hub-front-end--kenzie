@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const TitleHeaderLogin = styled.h1`
   color: #ff577f;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 25px;
@@ -18,7 +18,7 @@ export const DivHeaderRegister = styled.div`
 
   h1 {
     color: #ff577f;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
@@ -42,7 +42,7 @@ export const DivLinkRegister = styled.div`
   a {
     text-decoration: none;
     color: white;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
@@ -53,10 +53,12 @@ export const DivHeaderDashboard = styled.div`
   display: flex;
   margin: 0 auto;
   align-items: center;
+  border-bottom: 1px solid gray;
+  height: 80px;
 
   h1 {
     color: #ff577f;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
@@ -70,7 +72,7 @@ export const DivHeaderDashboard = styled.div`
     height: 32px;
     background: #212529;
     border-radius: 4px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;

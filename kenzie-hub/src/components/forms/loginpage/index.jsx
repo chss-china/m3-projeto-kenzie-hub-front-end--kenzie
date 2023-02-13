@@ -12,29 +12,29 @@ import { HeaderLogin } from "../../headers";
 import { SectionSpanButton } from "./style";
 import { NavLink } from "./style";
 
-export function LoginPage({ user, setUser }) {
-  const formSchema = yup.object().shape({
+export function LoginPage({ User, SetUser }) {
+  const FormSchema = yup.object().shape({
     email: yup.string().required("Email obrigatorio").email("Email invalido"),
     password: yup.string().required("Senha obrigatória"),
   });
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(formSchema),
+    resolver: yupResolver(FormSchema),
   });
 
   const OnSubmitFunction = async (data) => {
     try {
       const response = await Api.post("/sessions", data);
-      setUser(response.data.user);
+      SetUser(response.data.user);
       let TokenData = localStorage.setItem("@tokenUser", response.data.token);
       let UserId = localStorage.setItem("@UserId", response.data.user.id);
       setTimeout(() => {
-        navigate("/dashboard");
+        Navigate("/dashboard");
       }, 3000);
     } catch (error) {
       console.log(error);

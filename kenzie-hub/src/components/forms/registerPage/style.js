@@ -1,7 +1,9 @@
 import styled from "styled-components";
 export const DivBodyRegister = styled.div`
   width: 100vw;
-  height: 100%;
+
+  min-height: 100vh;
+
   background-color: #000000;
 `;
 export const ContainerRegister = styled.div`
@@ -18,14 +20,14 @@ export const ContainerRegister = styled.div`
   margin: 0 auto;
 
   h2 {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
     line-height: 28px;
   }
   span {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -37,7 +39,7 @@ export const ContainerRegister = styled.div`
     flex-direction: column;
   }
   label {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15.182px;
@@ -64,5 +66,8 @@ export const ContainerRegister = styled.div`
   }
   section {
     margin-top: 18px;
+  }
+  p {
+    color: #e83f5b;
   }
 `;

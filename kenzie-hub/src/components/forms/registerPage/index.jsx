@@ -9,8 +9,9 @@ import { Link } from "react-router-dom";
 import { ButtonRegister } from "../../buttons";
 import { ContainerRegister, DivBodyRegister } from "./style";
 import { HeaderRegister } from "../../headers";
+import axios from "axios";
 
-const formSchema = yup.object().shape({
+const FormSchema = yup.object().shape({
   name: yup.string().required("Nome Obrigatório"),
   email: yup.string().required("Email obrigatorio").email("Email invalido"),
   password: yup
@@ -25,13 +26,13 @@ const formSchema = yup.object().shape({
 });
 
 export function RegisterPage() {
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
   const OnSubmitFunction = async (data) => {
     try {
-      const response = await Api.post("/users", data);
-      toast.success("Usuario criado com sucesso");
+      const Response = await Api.post("/users", data);
+      toast.success("user created successfully");
       setTimeout(() => {
-        navigate("/");
+        Navigate("/");
       }, 3000);
     } catch (error) {
       console.log(error);
@@ -44,7 +45,7 @@ export function RegisterPage() {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(formSchema),
+    resolver: yupResolver(FormSchema),
   });
   return (
     <DivBodyRegister>
@@ -60,7 +61,7 @@ export function RegisterPage() {
               placeholder="Digite aqui seu nome"
               {...register("name")}
             />
-            {errors.name && errors.name.message}
+            <p>{errors.name && errors.name.message}</p>
           </section>
           <section>
             <label htmlfor="email">Email</label>
@@ -70,7 +71,7 @@ export function RegisterPage() {
               placeholder="Digite aqui seu email"
               {...register("email")}
             />
-            {errors.email && errors.email.message}
+            <p> {errors.email && errors.email.message}</p>
           </section>
           <section>
             <label htmlfor="password">Senha</label>
@@ -79,7 +80,7 @@ export function RegisterPage() {
               placeholder="Digite sua senha"
               {...register("password")}
             />
-            {errors.password && errors.password.message}
+            <p> {errors.password && errors.password.message}</p>
           </section>
           <section>
             <label htmlfor="bio">Minha Bio</label>
@@ -88,7 +89,7 @@ export function RegisterPage() {
               placeholder="Fale sobre você"
               {...register("bio")}
             />
-            {errors.bio && errors.bio.message}
+            <p>{errors.bio && errors.bio.message}</p>
           </section>
           <section>
             <label htmlfor="contact">Contato</label>
@@ -97,7 +98,7 @@ export function RegisterPage() {
               placeholder="Opção de contato"
               {...register("contact")}
             />
-            {errors.contact && errors.contact.message}
+            <p>{errors.contact && errors.contact.message}</p>
           </section>
           <section>
             <label htmlfor="course_module">Selecionar Módulo</label>
@@ -108,7 +109,7 @@ export function RegisterPage() {
               <option>Terceiro módulo (Introdução ao Backend)</option>
               <option>Quarto módulo (Backend Avançado)</option>
             </select>
-            {errors.course_module && errors.course_module.message}
+            <p>{errors.course_module && errors.course_module.message}</p>
             <ButtonRegister />
           </section>
         </form>

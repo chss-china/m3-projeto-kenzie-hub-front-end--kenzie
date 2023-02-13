@@ -4,16 +4,16 @@ import { RegisterPage } from "../forms/registerPage";
 import { NotFoundPage } from "../notFound";
 import { DashboardPage } from "../dashboard/index";
 
-export function RoutesPages({ user, setUser }) {
+export function RoutesPages({ User, SetUser }) {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LoginPage user={user} setUser={setUser} />} />
+        <Route path="/" element={<LoginPage User={User} SetUser={SetUser} />} />
         <Route path="/register" element={<RegisterPage />} />
 
         <Route
           path="/dashboard"
-          element={<DashboardPage user={user} setUser={setUser} />}
+          element={<DashboardPage User={User} SetUser={SetUser} />}
         />
         <Route path="*" element={<h1>404- Pagina não encontrada</h1>} />
       </Routes>

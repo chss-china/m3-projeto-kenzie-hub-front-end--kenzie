@@ -5,7 +5,7 @@ export const ButtonRegisterStyle = styled.button`
   background: #59323f;
   border: 1.2182px solid #59323f;
   border-radius: 4px;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -20,7 +20,7 @@ export const ButtonLoginStyle = styled.button`
   border: 1.2182px solid #ff577f;
   border-radius: 4.06066px;
   margin-top: 19px;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const DivBodyDashboard = styled.div`
   height: 100vh;
-  background-color: #121214;
+  background-color: #000000;
 `;
 export const DivContainerDashboard = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export const DivContainerDashboard = styled.div`
   align-items: center;
   width: 1100px;
   height: 600px;
-  background: #212529;
+  background: #000000;
   margin-top: 30px;
   @media (max-width: 1000px) {
     width: 100%;
@@ -27,7 +27,7 @@ export const DivContainerDashboard = styled.div`
     }
   }
   h1 {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 22px;
@@ -41,8 +41,8 @@ export const DivContainerDashboard = styled.div`
     color: white;
   }
 `;
-export const PModulo = styled.p`
-  font-family: "Inter";
+export const PModule = styled.p`
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -55,11 +55,13 @@ export const PModulo = styled.p`
     padding-left: 0px;
   }
 `;
-export const SectionEstamosDesenv = styled.div`
+export const SectionDeveloping = styled.div`
   margin: 0 auto;
+  margin-right: 480px;
+  text-align: justify;
 
   h2 {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 22px;
@@ -67,9 +69,14 @@ export const SectionEstamosDesenv = styled.div`
     color: #f8f9fa;
     margin: 0 auto;
     margin-top: 60px;
+    text-align: justify;
+
+    @media (max-width: 1040px) {
+      display: none;
+    }
   }
   p {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -77,5 +84,9 @@ export const SectionEstamosDesenv = styled.div`
     color: #f8f9fa;
     margin: 0 auto;
     margin-top: 40px;
+    text-align: justify;
+  }
+  @media (max-width: 1040px) {
+    display: none;
   }
 `;

@@ -20,7 +20,7 @@ export const ContainerLogin = styled.div`
   margin: 0 auto;
 
   h1 {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
@@ -32,7 +32,7 @@ export const ContainerLogin = styled.div`
     flex-direction: column;
   }
   label {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15.182px;
@@ -51,7 +51,7 @@ export const ContainerLogin = styled.div`
     margin-top: 10px;
   }
   span {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -59,7 +59,7 @@ export const ContainerLogin = styled.div`
     color: #868e96;
   }
   p {
-    color: white;
+    color: #e83f5b;
   }
 `;
 export const SectionSpanButton = styled.section`
@@ -68,7 +68,7 @@ export const SectionSpanButton = styled.section`
 
   span {
     margin-top: 40px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -84,6 +84,7 @@ export const SectionSpanButton = styled.section`
     background: #868e96;
     border: 1.2182px solid #868e96;
     border-radius: 4px;
+    font-family: "Inter", sans-serif;
   }
 `;
 export const NavLink = styled.div`
@@ -102,7 +103,7 @@ export const NavLink = styled.div`
   a {
     text-decoration: none;
 
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
