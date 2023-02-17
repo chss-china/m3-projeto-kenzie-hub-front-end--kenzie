@@ -11,13 +11,15 @@ import { ContainerLogin, DivBodyLogin } from "./style";
 import { HeaderLogin } from "../../headers";
 import { SectionSpanButton } from "./style";
 import { NavLink } from "./style";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/usercontext";
 
-export function LoginPage({ User, SetUser }) {
+export function LoginPage() {
+  const { Functionlogin } = useContext(UserContext);
   const FormSchema = yup.object().shape({
     email: yup.string().required("Email obrigatorio").email("Email invalido"),
     password: yup.string().required("Senha obrigatória"),
   });
-  const Navigate = useNavigate();
 
   const {
     register,
@@ -27,28 +29,14 @@ export function LoginPage({ User, SetUser }) {
     resolver: yupResolver(FormSchema),
   });
 
-  const OnSubmitFunction = async (data) => {
-    try {
-      const response = await Api.post("/sessions", data);
-      SetUser(response.data.user);
-      let TokenData = localStorage.setItem("@tokenUser", response.data.token);
-      let UserId = localStorage.setItem("@UserId", response.data.user.id);
-      setTimeout(() => {
-        Navigate("/dashboard");
-      }, 3000);
-    } catch (error) {
-      console.log(error);
-      toast.error(error.response.data.message);
-    }
-  };
   return (
     <DivBodyLogin>
       <HeaderLogin />
       <ContainerLogin>
         <h1>Login</h1>
-        <form onSubmit={handleSubmit(OnSubmitFunction)}>
+        <form onSubmit={handleSubmit(Functionlogin)}>
           <section>
-            <label forhtml="email">Email</label>
+            <label>Email</label>
             <input
               type="email"
               placeholder="Digite seu email"
@@ -57,7 +45,7 @@ export function LoginPage({ User, SetUser }) {
             <p> {errors.email && errors.email.message}</p>
           </section>
           <section>
-            <label forhtml="password">Senha</label>
+            <label>Senha</label>
             <input
               type="password"
               placeholder="Digite sua senha"

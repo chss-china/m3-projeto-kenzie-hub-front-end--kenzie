@@ -1,9 +1,11 @@
-import { Link, useNavigate } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom";
 import { TitleHeaderLogin } from "./style";
 import { DivHeaderRegister } from "./style";
 import { DivLinkRegister } from "./style";
 import { DivHeaderDashboard } from "./style";
 import { Hr } from "./style";
+import { useContext } from "react";
+import { UserContext } from "../contexts/usercontext";
 export function HeaderRegister() {
   return (
     <DivHeaderRegister>
@@ -15,7 +17,6 @@ export function HeaderRegister() {
   );
 }
 
-
 export function HeaderLogin() {
   return (
     <>
@@ -23,8 +24,9 @@ export function HeaderLogin() {
     </>
   );
 }
-export function HeaderDashboard({ User, SetUser }) {
+export function HeaderDashboard() {
   const Navigate = useNavigate();
+  const { User, SetUser } = useContext(UserContext);
   let Token = localStorage.getItem("@TokenUser");
   let UserId = localStorage.getItem("@UserId");
   function ClearLogout() {
@@ -35,7 +37,6 @@ export function HeaderDashboard({ User, SetUser }) {
     Navigate("/");
   }
 
-  
   return (
     <>
       <DivHeaderDashboard>

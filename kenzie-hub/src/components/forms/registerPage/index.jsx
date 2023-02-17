@@ -10,6 +10,8 @@ import { ButtonRegister } from "../../buttons";
 import { ContainerRegister, DivBodyRegister } from "./style";
 import { HeaderRegister } from "../../headers";
 import axios from "axios";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/usercontext";
 
 const FormSchema = yup.object().shape({
   name: yup.string().required("Nome Obrigatório"),
@@ -26,19 +28,7 @@ const FormSchema = yup.object().shape({
 });
 
 export function RegisterPage() {
-  const Navigate = useNavigate();
-  const OnSubmitFunction = async (data) => {
-    try {
-      const Response = await Api.post("/users", data);
-      toast.success("user created successfully");
-      setTimeout(() => {
-        Navigate("/");
-      }, 3000);
-    } catch (error) {
-      console.log(error);
-      toast.error(error.response.data.message);
-    }
-  };
+  const { FunctionRegister } = useContext(UserContext);
 
   const {
     register,
@@ -53,9 +43,9 @@ export function RegisterPage() {
       <ContainerRegister>
         <h2>Crie a sua conta</h2>
         <span>Rapido e Grátis, vamos nessa</span>
-        <form onSubmit={handleSubmit(OnSubmitFunction)}>
+        <form onSubmit={handleSubmit(FunctionRegister)}>
           <section>
-            <label htmlfor="name">Nome</label>
+            <label>Nome</label>
             <input
               type="text"
               placeholder="Digite aqui seu nome"
@@ -64,7 +54,7 @@ export function RegisterPage() {
             <p>{errors.name && errors.name.message}</p>
           </section>
           <section>
-            <label htmlfor="email">Email</label>
+            <label>Email</label>
 
             <input
               type="email"
@@ -74,7 +64,7 @@ export function RegisterPage() {
             <p> {errors.email && errors.email.message}</p>
           </section>
           <section>
-            <label htmlfor="password">Senha</label>
+            <label>Senha</label>
             <input
               type="password"
               placeholder="Digite sua senha"
@@ -83,7 +73,7 @@ export function RegisterPage() {
             <p> {errors.password && errors.password.message}</p>
           </section>
           <section>
-            <label htmlfor="bio">Minha Bio</label>
+            <label>Minha Bio</label>
             <input
               type="text"
               placeholder="Fale sobre você"
@@ -92,7 +82,7 @@ export function RegisterPage() {
             <p>{errors.bio && errors.bio.message}</p>
           </section>
           <section>
-            <label htmlfor="contact">Contato</label>
+            <label>Contato</label>
             <input
               type="number"
               placeholder="Opção de contato"
@@ -101,7 +91,7 @@ export function RegisterPage() {
             <p>{errors.contact && errors.contact.message}</p>
           </section>
           <section>
-            <label htmlfor="course_module">Selecionar Módulo</label>
+            <label>Selecionar Módulo</label>
             <select {...register("course_module")}>
               <option>Módulos</option>
               <option>Primeiro módulo (Introdução ao Frontend)</option>
