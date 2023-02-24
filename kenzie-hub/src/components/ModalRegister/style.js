@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const DivContainerModalRegister = styled.div`
-  width: 500px;
-  min-height: 480px;
+  width: 430px;
+  min-height: 400px;
   background: #212529;
   box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
@@ -9,7 +9,7 @@ export const DivContainerModalRegister = styled.div`
   top: 170px;
   @media (max-width: 1000px) {
     width: 370px;
-    min-height: 370.34px;
+    min-height: 385.34px;
   }
   @media (max-width: 400px) {
     width: 100%;
@@ -59,6 +59,8 @@ export const DivContainerModalRegister = styled.div`
     color: #f8f9fa;
     margin-top: 30px;
     margin-right: 20px;
+    display: flex;
+    justify-content: center;
     @media (max-width: 1000px) {
       margin-left: 0px;
       font-size: 16px;
@@ -68,6 +70,7 @@ export const DivContainerModalRegister = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    margin: 0 auto;
     @media (max-width: 1000px) {
       margin-top: 0px;
     }
@@ -83,7 +86,7 @@ export const DivContainerModalRegister = styled.div`
     margin-top: 20px;
     align-items: center;
     justify-content: center;
-    margin-left: 70px;
+    margin-left: 50px;
     font-family: "Inter", sans-serif;
     @media (max-width: 1000px) {
       margin-left: 40px;
@@ -95,7 +98,7 @@ export const DivContainerModalRegister = styled.div`
     margin-top: 20px;
     padding: 0px 16.2426px;
     gap: 10.15px;
-    margin-left: 70px;
+    margin-left: 50px;
     width: 329.93px;
     height: 48px;
     background: #343b41;
@@ -118,7 +121,7 @@ export const DivContainerModalRegister = styled.div`
     border-radius: 4.06066px;
     color: #ffff;
     margin-top: 35px;
-    margin-left: 70px;
+    margin-left: 50px;
     @media (max-width: 1000px) {
       margin-left: 20px;
       margin-right: 10px;

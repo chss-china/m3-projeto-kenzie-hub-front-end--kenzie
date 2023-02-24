@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const ButtonRegisterStyle = styled.button`
-  width: 342px;
+  width: 330px;
   height: 48px;
   background: #59323f;
   border: 1.2182px solid #59323f;
@@ -12,6 +12,7 @@ export const ButtonRegisterStyle = styled.button`
   line-height: 26px;
   color: #ffffff;
   margin-top: 18px;
+  margin-right: -4px;
 `;
 export const ButtonLoginStyle = styled.button`
   width: 333px;

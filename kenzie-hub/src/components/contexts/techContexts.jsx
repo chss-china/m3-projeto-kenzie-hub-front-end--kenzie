@@ -20,7 +20,7 @@ export const TechProvider = ({ children }) => {
       });
       SetTech([...Tech, response.data]);
       GetTechs();
-      toast.success("Tecnologia cadastrada com sucesso");
+      toast.success("Technology registered successfully");
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -33,7 +33,7 @@ export const TechProvider = ({ children }) => {
         },
       });
       GetTechs();
-      toast.success("Tecnologia alterada com sucesso");
+      toast.success("Technology changed successfully");
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -50,7 +50,7 @@ export const TechProvider = ({ children }) => {
 
       const DeleteFilter = Tech.filter((MyTech) => MyTech.id !== TechId);
       SetTech(DeleteFilter);
-      toast.success("Tecnologia removida com sucesso");
+      toast.success("Technology removed successfully");
     } catch (error) {
       toast.error(error.response.data.message);
     }

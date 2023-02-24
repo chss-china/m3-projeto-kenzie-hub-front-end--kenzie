@@ -7,13 +7,13 @@ export const DivBodyLogin = styled.div`
 `;
 export const ContainerLogin = styled.div`
   width: 369px;
-  height: 502px;
   background: #212529;
   box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  padding: 42px 22px;
+  padding: 20px 22px;
+  padding-top: 40px;
   gap: 22px;
   display: flex;
   flex-direction: column;
@@ -26,10 +26,15 @@ export const ContainerLogin = styled.div`
     font-size: 25px;
     line-height: 28px;
     color: #f8f9fa;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
   }
   form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
   }
   label {
     font-family: "Inter", sans-serif;
@@ -39,7 +44,10 @@ export const ContainerLogin = styled.div`
     line-height: 0px;
     color: #f8f9fa;
     text-align: right;
+    display: flex;
     justify-content: start;
+    margin-bottom: 4px;
+    margin-top: 12px;
   }
   input {
     width: 329px;
@@ -49,6 +57,7 @@ export const ContainerLogin = styled.div`
     border-radius: 4px;
     color: #868e96;
     margin-top: 10px;
+    margin-bottom: 18px;
   }
   span {
     font-family: "Inter", sans-serif;
@@ -60,6 +69,9 @@ export const ContainerLogin = styled.div`
   }
   p {
     color: #e83f5b;
+    display: flex;
+    justify-content: start;
+    margin-top: -15px;
   }
 `;
 export const SectionSpanButton = styled.section`

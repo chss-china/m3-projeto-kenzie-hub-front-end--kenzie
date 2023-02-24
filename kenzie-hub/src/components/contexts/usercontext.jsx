@@ -9,7 +9,7 @@ import axios from "axios";
 export const UserContext = createContext({});
 export const UserProvider = ({ children }) => {
   const [User, SetUser] = useState([]);
-  const Navigate3 = useNavigate();
+  const Navigate = useNavigate();
 
   useEffect(() => {
     const TokenUserAutoLogin = localStorage.getItem("@tokenUser");
@@ -22,7 +22,7 @@ export const UserProvider = ({ children }) => {
             },
           });
           SetUser(response.data);
-          Navigate3("/dashboard");
+          Navigate("/dashboard");
         } catch (error) {
           localStorage.clear("@TokenUser");
           console.log(error);
@@ -40,14 +40,14 @@ export const UserProvider = ({ children }) => {
       let TokenData = localStorage.setItem("@tokenUser", response.data.token);
       let UserId = localStorage.setItem("@UserId", response.data.user.id);
       setTimeout(() => {
-        Navigate2("/dashboard");
+        Navigate("/dashboard");
       }, 3000);
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
     }
   };
-  const Navigate = useNavigate();
+
   const FunctionRegister = async (data) => {
     try {
       const Response = await Api.post("/users", data);

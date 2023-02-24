@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const DivContainerModalEdit = styled.div`
-  width: 500px;
-  min-height: 480px;
+  width: 430px;
+  min-height: 400px;
   background: #212529;
   box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
@@ -47,7 +47,7 @@ export const DivContainerModalEdit = styled.div`
     color: #868e96;
   }
   label {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -55,6 +55,9 @@ export const DivContainerModalEdit = styled.div`
     color: #f8f9fa;
     margin-top: 30px;
     margin-right: 20px;
+    display: flex;
+    justify-content: center;
+
     @media (max-width: 1000px) {
       margin-left: 0px;
       font-size: 16px;
@@ -68,6 +71,8 @@ export const DivContainerModalEdit = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    position: relative;
+    margin: 0 auto;
     @media (max-width: 1000px) {
       margin-top: 0px;
     }
@@ -83,7 +88,7 @@ export const DivContainerModalEdit = styled.div`
     margin-top: 20px;
     align-items: center;
     justify-content: center;
-    margin-left: 70px;
+    margin-left: 50px;
     font-family: "Inter", sans-serif;
     @media (max-width: 1000px) {
       margin-left: 40px;
@@ -95,7 +100,7 @@ export const DivContainerModalEdit = styled.div`
     margin-top: 20px;
     padding: 0px 16.2426px;
     gap: 10.15px;
-    margin-left: 70px;
+    margin-left: 50px;
     width: 329.93px;
     height: 48px;
     background: #343b41;
@@ -124,7 +129,7 @@ export const DivContainerModalEdit = styled.div`
     font-size: 16px;
     line-height: 26px;
     color: #ffffff;
-    margin-left: -25px;
+    margin-left: -2px;
     margin-right: 30px;
     font-family: "Inter", sans-serif;
     @media (max-width: 1000px) {
