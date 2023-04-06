@@ -10,3 +10,6 @@ restrições no CSS, estou sempre buscando evoluir e melhorar meu trabalho.
 
 Tecnologias:
 JavaScript, Styled Component- CSS, React js, Hooks, Bibliotecas, Git ,Github.Apis
+
+link do site
+https://kenzie-hub-chss-china.vercel.app/
